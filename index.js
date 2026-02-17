@@ -5,3 +5,10 @@ let getComputerChoice = () =>{
 
 console.log(getComputerChoice());
 
+let getHumanChoice = (humanChoice) =>{
+
+}
+
+let humanChoice = prompt("Rock, Paper or Scissors?").toLocaleLowerCase();
+
+console.log(humanChoice);
