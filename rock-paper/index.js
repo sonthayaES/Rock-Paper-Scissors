@@ -20,31 +20,31 @@ let computerChoice = Math.floor(Math.random() * 3) +1;
 
 let playRound = (humanChoice, computerChoice) => {
     if(humanChoice == "Rock" && computerChoice == "Scissors"){
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        resultsDiv.textContent = (`You Win! ${humanChoice} beats ${computerChoice}`);
         humanScore += 1;
     }else if(humanChoice == "Rock" && computerChoice == "Paper"){
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        resultsDiv.textContent = (`You Lose! ${computerChoice} beats ${humanChoice}`);
         computerScore +=1;
     }else if(humanChoice == "Rock" && computerChoice == "Rock") {
-        console.log(`You Tie ${humanChoice} tie with ${computerChoice}`);
+        resultsDiv.textContent = (`You Tie ${humanChoice} tie with ${computerChoice}`);
     }else if(humanChoice == "Paper" && computerChoice == "Rock"){
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        resultsDiv.textContent = (`You Win! ${humanChoice} beats ${computerChoice}`);
         humanScore += 1;
     }else if(humanChoice == "Paper" && computerChoice == "Scissors"){
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        resultsDiv.textContent = (`You Lose! ${computerChoice} beats ${humanChoice}`);
         computerScore +=1;
     }else if(humanChoice == "Paper" && computerChoice == "Paper"){
-        console.log(`You tie ${humanChoice} tie with ${computerChoice}`);
+        resultsDiv.textContent = (`You tie ${humanChoice} tie with ${computerChoice}`);
     }else if(humanChoice == "Scissors" && computerChoice == "Paper"){
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        resultsDiv.textContent = (`You Win! ${humanChoice} beats ${computerChoice}`);
         humanScore +=1;
     }else if(humanChoice == "Scissors" && computerChoice == "Rock"){
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        resultsDiv.textContent = (`You Lose! ${computerChoice} beats ${humanChoice}`);
         computerScore +=1;
     }else{
-        console.log(`You tie with ${computerChoice}`);
+        resultsDiv.textContent = (`You tie with ${computerChoice}`);
     }
-    console.log(whoLead(humanScore, computerScore));
+    scoreDiv.textContent = (whoLead(humanScore, computerScore));
     if(humanScore === 5 || computerScore === 5){
         winner();
     }
@@ -62,18 +62,19 @@ let whoLead = (humanScore, computerScore) => {
 
 let winner = () =>{
     if(humanScore >= 5 && computerScore <= 5){
-        console.log("Winner is human");
+        winnerDiv.textContent = ("Winner is human");
     }else{
-        console.log("Winner is computer");
+        winnerDiv.textContent = ("Winner is computer");
     }
     console.log("-----Final Score-----");
 }
     
-
-
-const choiceRock = document.querySelector("button.rock");
-const choicePaper = document.querySelector("button.paper");
-const choiceScissors = document.querySelector("button.scissors");
+const choiceRock = document.querySelector(".rock");
+const choicePaper = document.querySelector(".paper");
+const choiceScissors = document.querySelector(".scissors");
+const resultsDiv = document.querySelector('#round-results');
+const scoreDiv = document.querySelector('#running-score');
+const winnerDiv = document.querySelector('#final-winner');
 
 
 choiceRock.addEventListener('click', function(){
