@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    margin-top: 50px;
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rock {
+    height: 80px;
+    width: 150px;
+}
+
+.paper{
+    height: 80px;
+    width: 150px;
+}
+
+.scissors {
+    height: 80px;
+    width: 150px;
+}
+#round-results{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#running-score{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#final-winner{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
